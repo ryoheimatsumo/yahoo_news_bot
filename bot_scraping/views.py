@@ -2,7 +2,7 @@ from django.shortcuts import render
 import json
 import random
 import requests
-import scraping as sc
+from . import scraping as sc
 import re
 
 from django.shortcuts import render
