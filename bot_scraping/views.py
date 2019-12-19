@@ -9,8 +9,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-REPLY_ENDPOINT = 'https://sample-bot-line111.herokuapp.com/callback/'
-ACCESS_TOKEN = 'coWmXP5AQuEvAXR+dVPQlsjLUGbRJqyyO5KoDt4JIaLSrOjbakB+O5ZxOYIb9x77nPDXppgXaJ12+G93QQepUV6QR+Yk4oAB+kS3LFZPSSmCFnVJGlD1ZPDbpfYFTTPO7f0X7utim2C2S+3UifM0bQdB04t89/1O/w1cDnyilFU='
+REPLY_ENDPOINT = 'https://api.line.me/v2/bot/message/reply'
+ACCESS_TOKEN = 'COHW5ISzwGu+cLyTX8FQ9Pu/iEWFXejhCdwOhoUosAbTaxtMoaa8Z4Nrqgpcva7nYxyFw97eA0NYEKIA9YQlOuMwgOW/IvTxUJh0c6FnNbcTBXZPvb8S10kT4zge2SLnL3FFmD1VFDnyePBOm5nRAgdB04t89/1O/w1cDnyilFU='
 HEADER = {
     "Content-Type": "application/json",
     "Authorization": "Bearer " + ACCESS_TOKEN
