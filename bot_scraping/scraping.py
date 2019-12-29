@@ -1,11 +1,12 @@
 import urllib.request
 from bs4 import BeautifulSoup
 
-url = 'https://news.yahoo.co.jp/topics'
+url_topic = 'https://news.yahoo.co.jp/topics'
+url_base = 'https://news.yahoo.co.jp/search/?p='
 
 
 def getAllTopics():
-    req = urllib.request.Request(url)
+    req = urllib.request.Request(url_topic)
     html = urllib.request.urlopen(req)
     soup = BeautifulSoup(html, "html.parser")
     topicsindex = soup.find('div', attrs={'class': 'topicsListAllMain'})
@@ -25,20 +26,26 @@ def getAllTopics():
     return result
 
 def getNews(word):
+    url = url_base + word
     req = urllib.request.Request(url)
     html = urllib.request.urlopen(req)
     soup = BeautifulSoup(html, "html.parser")
-    main = soup.find('div', attrs={'class': 'topicsListAllMain'})
-    topics = main.select("li > a")
+    main = soup.find('div', attrs={'id': 'NSm'})
+    null_flg = False
+    if not main:
+        null_flg = True
+    else:
+        topics = main.select("h2 > a")
 
     count = 0
     list = []
-
-    for topic in topics:
-        if topic.contents[0].find(word) > -1:
+    if null_flg == False:
+        for topic in topics:
             list.append(topic.contents[0])
             list.append(topic.get('href'))
+            print(topic.contents[0])
             count += 1
+
     if count == 0:
         list.append("記事が見つかりませんでした！！")
 
