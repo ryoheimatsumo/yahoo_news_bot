@@ -1,5 +1,6 @@
 import urllib.request
 from bs4 import BeautifulSoup
+from urllib.parse import urlparse, quote_plus, unquote
 
 url_topic = 'https://news.yahoo.co.jp/topics'
 url_base = 'https://news.yahoo.co.jp/search/?p='
@@ -26,7 +27,7 @@ def getAllTopics():
     return result
 
 def getNews(word):
-    url = url_base + word
+    url = url_base + quote_plus(word,encoding='utf-8')
     req = urllib.request.Request(url)
     html = urllib.request.urlopen(req)
     soup = BeautifulSoup(html, "html.parser")
