@@ -32,7 +32,7 @@ SECRET_KEY = '84^h-x762hd$yyn0o1t+2)eddblu7y6si)4+is4%vzhyrd-b5f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['postgresql']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
