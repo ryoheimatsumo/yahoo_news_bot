@@ -23,7 +23,7 @@ django-js-asset==1.2.2
 django-summernote==0.8.11.4
 django-taggit==1.1.0
 django-tinymce==2.8.0
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 ez-setup==0.9
 Faker==1.0.5
 fastcache==1.1.0
